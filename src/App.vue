@@ -30,6 +30,9 @@
         filters: {
             toUppercase(value) {
                 return value.toUpperCase();
+            },
+            'to-lowercase'(value) {
+                return value.toLowerCase();
             }
         },
         components: {
