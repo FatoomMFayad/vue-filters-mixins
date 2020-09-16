@@ -1,34 +1,19 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div>
                 <h1>Filters & Mixins</h1>
-                <p>{{ text | toUpperCase | to-lower-case}}</p>
-                <hr>
                 <input v-model="filterText">
                 <ul>
                     <li v-for="fruit in filteredFruits">{{ fruit }}</li>
                 </ul>
-                <hr>
-                <appList></appList>
-            </div>
         </div>
-    </div>
 </template>
 
 <script>
-    import List from './List.vue'
     export default {
         data() {
             return {
-                text: 'Hello there!',
                 fruits: ['Apple', 'Orange', 'Banana'],
                 filterText: ''
-            }
-        },
-        filters: {
-            toUpperCase(value) {
-                return value.toUpperCase();
             }
         },
         computed: {
@@ -37,9 +22,6 @@
                     return element.match(this.filterText);
                 })
             }
-        },
-        components: {
-            appList: List
         }
     }
 </script>
